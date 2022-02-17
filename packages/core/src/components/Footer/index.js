@@ -1,7 +1,6 @@
 /* eslint-disable react/default-props-match-prop-types */
 
 import {
-  StayInTouch,
   QuickLinks,
   RichTypography,
   LogoButton,
@@ -52,19 +51,6 @@ function Footer({
                 {description}
               </RichTypography>
             )}
-            {socialMedia && (
-              <StayInTouch
-                title={title}
-                socialMedia={socialMedia}
-                classes={{
-                  root: classes.stayInTouch,
-                  icon: classes.stayInTouchIcon,
-                  links: classes.stayInTouchLinks,
-                  text: classes.stayInTouchText,
-                  link: classes.stayInTouchLink,
-                }}
-              />
-            )}
           </Grid>
           <Grid
             container
@@ -78,6 +64,7 @@ function Footer({
             {quickLinksProp?.map((column) => (
               <Grid container item xs={12} lg={6}>
                 <QuickLinks
+                  key={column.title}
                   linkComponent={Link}
                   {...column}
                   classes={{
@@ -98,7 +85,6 @@ function Footer({
 Footer.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  socialMedia: PropTypes.arrayOf(PropTypes.shape({})),
   quickLinks: PropTypes.arrayOf(PropTypes.shape({})),
   logoProps: PropTypes.shape({
     src: PropTypes.string,
@@ -112,7 +98,6 @@ Footer.propTypes = {
 Footer.defaultProps = {
   title: undefined,
   description: undefined,
-  socialMedia: undefined,
   quickLinks: undefined,
   copyrightProps: undefined,
   logoProps: undefined,
