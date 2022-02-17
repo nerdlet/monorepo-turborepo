@@ -9,8 +9,6 @@ import { Grid } from "@material-ui/core";
 import PropTypes from "prop-types";
 import React from "react";
 
-import Link from "core/src/components/Link";
-
 import useStyles from "./useStyles";
 
 function Footer({
@@ -37,7 +35,6 @@ function Footer({
             {logoProps && (
               <LogoButton
                 {...logoProps}
-                component={Link}
                 classes={{
                   root: classes.logoButton,
                 }}
@@ -64,7 +61,6 @@ function Footer({
             {quickLinksProp?.map((column) => (
               <Grid container item xs={12} lg={6} key={column.title}>
                 <QuickLinks
-                  linkComponent={Link}
                   {...column}
                   classes={{
                     root: classes.quickLinkRoot,
