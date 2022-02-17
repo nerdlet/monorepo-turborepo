@@ -62,9 +62,8 @@ function Footer({
             lg={4}
           >
             {quickLinksProp?.map((column) => (
-              <Grid container item xs={12} lg={6}>
+              <Grid container item xs={12} lg={6} key={column.title}>
                 <QuickLinks
-                  key={column.title}
                   linkComponent={Link}
                   {...column}
                   classes={{
