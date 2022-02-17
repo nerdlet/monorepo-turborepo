@@ -1,4 +1,4 @@
-import  { MuiButtonExample, Typography, Page, Link } from 'core'
+import  { MuiButtonExample, Typography, Page } from 'core'
 
 export default function Docs({...props}) {
   return (
@@ -6,7 +6,6 @@ export default function Docs({...props}) {
       <h1>Example Docs </h1>
       <MuiButtonExample />
       <Typography/>
-      <Link href="/home">this is a link</Link>
       <Page {...props}/>
     </div>
   );

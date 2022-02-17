@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default function App(){
+function App(){
   return (
     <div>this is the main application page</div>
   )
 }
+
+export default App;
